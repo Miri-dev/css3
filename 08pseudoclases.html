@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Pseudoclases */
+        a:link {
+            color: orange;
+        }
+        /* Enlaces no visitados */
+        a:visited{
+            color:violet;
+        }
+
+        /* Input seleccionado */
+        input:focus{
+            background-color: red;;
+        }
+
+        /* Pasar el cursor por encima del elemento */
+        a:hover{
+            color: red;
+            font-size: 20px;
+        }
+
+        /* Pseudoclase de excusión */
+        p:not(.excluido){
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="">Esto es un enlace</a>
+    <input type="text">
+    <br>
+    <br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p class="excluido">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+
+
+    
+</body>
+</html>

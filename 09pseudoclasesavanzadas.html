@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Pseudoclases avanzadas*/
+
+        /* Estilos al primer elemento hijo */
+        .contenedor p:first-child{
+            color: blue;
+        }
+
+        /* Estilos al último elemento hijo */
+        .contenedor p:last-child{
+            color: red;
+        }
+
+        /* Estilos al elemento N */
+        .contenedor p:nth-child(3){
+            color: turquoise;
+        }
+
+        /* Estilos al elemento N inverso*/
+        .contenedor p:nth-last-child(2){
+            color:violet;
+        }
+
+        /* Estilos a elementos hijos pares */
+        .contenedor-dos p:nth-child(even){
+            color:orange;
+        }
+
+         /* Estilos a elementos hijos impares */
+         .contenedor-dos p:nth-child(odd){
+            color: red;
+        }
+
+        /* Estilos cada cierto número de elementos */
+        .contenedor-tres > p:nth-child(3n){
+            color:blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="contenedor">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+</div>
+<br>
+<div class="contenedor-dos">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+</div>
+<br>
+<div class="contenedor-tres">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+</div>
+
+
+
+    
+</body>
+</html>

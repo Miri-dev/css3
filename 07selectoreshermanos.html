@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Selectores hermanos */
+
+        /* Hermanos general */
+        .articulo h1 ~ span{
+            color: blue;
+        }
+
+        /* Hermanos adyacentes */
+        .articulo h1 + span{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div class="contenedor">
+    <div class="contenido">
+        <div class="articulo">
+            <h1>Hola mundo</h1>
+            <p>Lorem ipsum dolor sit amet consectetur </p>
+            <span>Hola mundo</span>
+        </div>
+
+        <div class="articulo">
+            <h1>Hola mundo</h1>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. .</span>
+            <span>Hola mundo</span>
+        </div>
+
+    </div>
+</div>
+   
+</body>
+</html>
