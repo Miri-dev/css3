@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Pseudoelementos*/
+        span::before{
+            content:"-";
+            font-size: 30px;
+        }
+
+        span::after{
+            content: "Hola, texto generado";
+            color: blue;
+        }
+
+        p::first-letter{
+            font-size: 40px;
+        }
+        p::first-line {
+            color: red;
+        }
+
+        /* Pseudoelementos de listas */
+        ul li{
+            color: violet;
+        }
+
+        /* Pseudoelementos para placeholder */
+        input::placeholder{
+            color:red;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+<body>
+    <span></span>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem magnam, vitae aliquid qui nemo eveniet ipsum laborum modi, fuga explicabo ipsam totam ea soluta laboriosam placeat iste! Neque, eos.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem magnam, vitae aliquid qui nemo eveniet ipsum laborum modi, fuga explicabo ipsam totam ea soluta laboriosam placeat iste! Neque, eosLorem ipsum dolor sit amet consectetur adipisicing elit. Officia autem magnam, vitae aliquid qui nemo eveniet ipsum laborum modi, fuga explicabo ipsam totam ea soluta laboriosam placeat iste! Neque, eos</p>
+
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+    <input type="text" placeholder="Escribe tu nombre">
+</body>
+</html>
