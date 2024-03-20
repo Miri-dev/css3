@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Reglas estilo cascada */
+
+        /* 1. Tiene prioridad el estilo de más abajo:  
+        p {
+            color: blue;
+        }
+
+        p {
+            color: red;
+        } Este tiene prioridad */
+
+        /* 2. Tiene prioridad los elementos más específicos 
+        
+        p.miparrafo {
+            color: blue;
+        } -> Este tiene prioridad
+
+        p {
+            color: red;
+        } Este tiene prioridad */
+
+        /* 3. Podemos romper la regla de cascada y crear una excepción con !important 
+         p {
+            color: blue !important;
+        } -> Este tiene prioridad
+
+        p {
+            color: red;
+        }
+        */
+
+    </style>
+</head>
+<body>
+    <p class="miparrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam assumenda excepturi voluptatem officiis necessitatibus qui voluptatibus consequuntur. Accusamus minima nam quia qui! Commodi aperiam voluptate numquam quae exercitationem. Odio, et?</p>
+
+
+</body>
+</html>
