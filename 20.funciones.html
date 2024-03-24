@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            background: black;
+            width: 100%;
+            height: 100px;
+        }
+
+        div.container {
+            background: blue;
+            width: 100%;
+            height: 100vh;
+
+            /* Función calc */
+            height: calc(100vh - 100px);
+
+            /* Función min */
+            width: min(200px, 25%);
+
+            /* Funsión max */
+            width: max(300px, 25%);
+
+         
+           /* Función CLAMP. Mezcla de la función min y max */
+           width: clamp(100px, 25%, 300px);
+        }
+
+        h1::after {
+            content: attr(data-name);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu"></div>
+    <div class="container"></div>
+
+    <h1 data-name="Jorge">Hello </h1>
+</body>
+</html>
