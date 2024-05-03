@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #desbordamiento {
+            width: 250px;
+            height: 250px;
+            background-color: #ffdb39;
+            padding: 20px;
+
+            /* Desbordamiento */
+            overflow: hidden; /* el texto desbordado queda oculto*/
+            overflow: visible; /* el texto desbordado queda visible. Es el que viene por defecto*/
+            overflow: scroll; /* Aparece una barra de scroll pero sigue estando aunque no haya desbordamiento*/
+            overflow: auto;/* Aparece una barra de scroll cuando hay desbordamiento pero no aparece nada cuando no lo hay*/
+        }
+    </style>
+</head>
+<body>
+    <div id="desbordamiento">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem at et, nihil nemo sunt neque nostrum, quasi doloremque beatae distinctio vel eligendi unde facilis alias quisquam praesentium adipisci. Eos, a!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ea itaque et aliquid dignissimos ducimus optio odit harum doloremque ipsa? Beatae ut, placeat illo facilis consequatur nihil sapiente odit. Labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ea itaque et aliquid dignissimos ducimus optio odit harum doloremque ipsa? Beatae ut, placeat illo facilis consequatur nihil sapiente odit. Labore.</p>
+</body>
+</html>

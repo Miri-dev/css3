@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }   
+
+        body {
+            background: #f2f2f2;
+            font-family: 'Open-Sans';
+        }
+
+        .contenedor {
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: auto; /* Gracias a esto controlamos el desbordamiento y nos aparece la barrita del scroll*/
+        }
+
+        .contenedor h1 {
+            font-size: 38px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .contenedor hr {
+            background: #00a2ff;
+            width: 20%;
+            height: 5px;
+            border: none;
+            margin: 20px 0;
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 28px;
+            font-size: 16px;
+            color: #414141;
+        }
+
+        /* Estilos de scroll bar del body. Usando solo scrollbar es para el fondo de la barra y scrollbar-thumb le da estilo a la barra en sí */
+        body::-webkit-scrollbar {
+            width: 10px;
+            background: #000;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: yellow;
+        }
+
+        .contenedor::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .contenedor::-webkit-scrollbar-thumb {
+            background: #00a2ff;
+            border-radius: 5px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Barra de Scroll</h1>
+        <hr>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic?</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic?</p>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic? Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, natus reiciendis perferendis odio consectetur eveniet accusantium dolorum ut esse alias delectus fuga animi reprehenderit dicta asperiores incidunt officiis soluta hic?</p>
+
+</body>
+</html>

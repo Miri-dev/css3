@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cómo simular un scroll cuando hacemos clic y queremos que nos lleve a un elemento determinado directamente. */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            width: 100%;
+            height: 50px;
+            background: #400a96;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 80px;
+            line-height: 50px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: #FFF;
+            font-size: 25px;
+        }
+
+        article {
+            width: 50%;
+            margin: 100px auto;
+            padding: 20px;
+            border: 3px solid #400a96
+        }
+
+        article h1 {
+            font-size: 45px;
+        }
+
+        article p {
+            line-height: 27px;
+            font-size: 18px;
+        }
+
+        article button {
+            width: 150px;
+            height: 40px;
+            margin: 20px 0;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#art1">Articulo1</a>
+        <a href="#art2">Articulo2</a>
+        <a href="#art3">Articulo3</a>
+        <a href="#art4">Articulo4</a>
+    </nav>
+
+    <article id="art1">
+        <h1>Mi titulo 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quam beatae ad placeat corrupti reprehenderit excepturi tempora voluptate in odio fugiat mollitia molestias expedita sint minus, aliquam omnis unde quia.</p>
+        <button>Click aqui</button>
+
+    </article>
+
+    <article id="art2">
+        <h1>Mi titulo 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quam beatae ad placeat corrupti reprehenderit excepturi tempora voluptate in odio fugiat mollitia molestias expedita sint minus, aliquam omnis unde quia.</p>
+        <button>Click aqui</button>
+    </article>
+
+    <article id="art3">
+        <h1>Mi titulo 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quam beatae ad placeat corrupti reprehenderit excepturi tempora voluptate in odio fugiat mollitia molestias expedita sint minus, aliquam omnis unde quia.</p>
+        <button>Click aqui</button>
+
+    </article>
+
+    <article id="art4">
+        <h1>Mi titulo 4</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quam beatae ad placeat corrupti reprehenderit excepturi tempora voluptate in odio fugiat mollitia molestias expedita sint minus, aliquam omnis unde quia.</p>
+        <button>Click aqui</button>
+
+    </article>
+</body>
+</html>

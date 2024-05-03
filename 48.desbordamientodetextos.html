@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            width: 300px;
+
+            /* Primera forma de desbrodamiento de texto. Es la manera recomendada */
+            white-space: nowrap; /*Coloca el texto en una única línea sin respetar el espacio del contenedor */
+            overflow: hidden; /* Corta el texto al tamaño del contenedor */
+            text-overflow: ellipsis; /* Coloca 3 puntosal final */
+        }
+
+        h2 {
+            width: 300px;
+
+            /* Segunda forma. No lo soportan todos los navagadores */
+            display: -webkit-box ; /* Display le dice cómo va a desplagar el textom*/
+            -webkit-box-orient: vertical; /* Le indicamos cómo queremos que sea su orientacion */
+            -webkit-line-clamp: 4; /* Número de filas que queremos que tenga nuestro texto. A la 4º fila coloca puntos suspensivos */
+            overflow: hidden; /* Lo que hace es que hace desaparecer el resto de texto que aparece despues de los puntos suspensivos */
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis cumque est voluptatum illum enim recusandae voluptates necessitatibus corrupti perferendis dolores quia aspernatur totam, minima, inventore beatae, error nostrum alias sapiente.</h1>
+
+    <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eligendi placeat odio reiciendis numquam deleniti officia eius iusto molestias. Deleniti impedit magni maxime amet. Vel maxime tempora nesciunt fugit tenetur!</h2>
+
+</body>
+</html>
