@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --color-primario: #db2626;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+            color: #111;
+        }   
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Heather */
+        .navbar {
+            background: var(--color-primario);
+            height: 50px;
+            position: sticky; /* con esto hacemos que la barra de navegación se mantenga arriba todo el rato mientras hacemos scroll en su div padre*/
+            top: 0;
+        }
+
+        .navbar a {
+            color: #FFF;
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 50px; /* esto nos sirve para centrar los links porque espacia las líneas de texto, es el interlineado y al darle 50px nos lo centra*/
+            font-weight: 600;
+            padding: 20px 30px;
+        }
+
+        .navbar div {
+            width: 720px;
+            margin: 0 auto;
+        }
+        
+        .contenedor-imagen {
+            height: 100vh;
+        }
+
+        .contenedor-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Sección central */
+
+        main {
+            height: 800px;
+        }
+
+        .contenedor {
+            height: 100%;
+            position: relative; /* así tanto al aside como a la clase "contenido" los podemos poner dentro de este conteedor donde queramos*/
+        }
+
+        .contenido {
+            position: absolute;
+            top: 0;
+            left: 20%;
+        }   
+
+        .contenido p {
+            margin-bottom: 20px;
+            line-height: 30px;
+        }
+
+        .contenido .titulo {
+            font-weight: normal;
+        }
+
+        .contenido .fecha {
+            font-size: 14px;
+            font-weight: 600;
+            color: #636363;
+        }
+
+        aside {
+            position: sticky; /* esto hace que mientras hacemos scroll este menu se quede fijo mientras pasamos por su contenedor padre y lo sigamos viendo aunque hagamos scroll*/
+            top: 20px;
+            left: 20px;
+            width: 15%;
+            margin: 20px;
+            background: #111;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        aside .titulo {
+            font-weight: 600;
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        aside .indice a {
+            display: block;
+            color: var(--color-primario);
+            margin-bottom: 10px;
+        }
+
+
+        /* Botón fijo */
+        .btn-fixed {
+            position: fixed; /* al poner fixed hacemos que el botón siempre este en el mismo sitio con respecto al navegador aunque gagamos scroll. Y al darle 20px desde abajo y 20px desde la derecha lo posicionamos abajo a la derecha, y aunque hagamos scroll siempe va a estar en el mismo sitio*/
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--color-primario);
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+        .btn-fixed i {
+            color: #fff;
+            font-size: 20px;
+            line-height: 50px;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <!-- Botón fijo -->
+    <div class="btn-fixed">
+        <i class="fa-solid fa-envelope"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div>
+                <a href="#">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Precios</a>
+                <a href="#">Compañía</a>
+                <a href="#">Soporte</a>
+            </div>
+        </nav>
+        <div class="contenedor-imagen">
+            <img src="img/pc2.jpeg" alt="">
+        </div>
+    </header>
+
+    <!-- Sección central -->
+    <main>
+        <div class="contenedor">
+            <aside>
+                <h3 class="titulo">Temas</h3>
+                <nav class="indice">
+                    <a href="#">Artículo #1</a>
+                    <a href="#">Artículo #2</a>
+                    <a href="#">Artículo #3</a>
+                    <a href="#">Artículo #4</a>
+                </nav>
+            </aside>
+            <div class="contenido">
+                <div class="post">
+                    <h1 class="titulo">Articulo #1</h1>
+                    <p class="fecha">Publicado 4 de Marxo de 2021</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ex sit, nihil repellat suscipit rem repellendus magni ipsum fugiat maiores laborum ipsam mollitia maxime vero aspernatur saepe debitis commodi nemo?</p>
+                </div>
+
+                <div class="post">
+                    <h1 class="titulo">Articulo #2</h1>
+                    <p class="fecha">Publicado 4 de Marxo de 2021</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ex sit, nihil repellat suscipit rem repellendus magni ipsum fugiat maiores laborum ipsam mollitia maxime vero aspernatur saepe debitis commodi nemo?</p>
+                </div>
+
+                <div class="post">
+                    <h1 class="titulo">Articulo #3</h1>
+                    <p class="fecha">Publicado 4 de Marxo de 2021</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ex sit, nihil repellat suscipit rem repellendus magni ipsum fugiat maiores laborum ipsam mollitia maxime vero aspernatur saepe debitis commodi nemo?</p>
+                </div>
+
+                <div class="post">
+                    <h1 class="titulo">Articulo #4</h1>
+                    <p class="fecha">Publicado 4 de Marxo de 2021</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem ex sit, nihil repellat suscipit rem repellendus magni ipsum fugiat maiores laborum ipsam mollitia maxime vero aspernatur saepe debitis commodi nemo?</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contenedor-imagen footer">
+            <img src="img/pcsolo.jpeg" alt="">
+        </div>
+</footer>
+
+</body>
+</html>

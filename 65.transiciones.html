@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 70px;
+            display: inline-block;
+        }
+
+        .elemento1 {
+            background: #ed8b1a;
+        }
+
+        .elemento1:hover {
+            background: #ff3300;
+        }
+
+        .elemento-transicion {
+            background: #00cedd;
+
+        /* Propiedades de transicion */ 
+            /* transition-property: background; /* elegir a qué propiedad del elemento le queremos aplicar la transisición */
+            /* transition-duration: 1s; /* poner cuánto va a durar la transisición */
+            /* transition-timing-function: linear; velocidad o movimiento de la transición */
+            /* transition-delay: 0.5s; poner cuánto tiempo va a tardar en comenzar la transición */ 
+
+        /* Atajo para esas cuatro propiedades con la propiedad transition: */
+            /* transition: background 1s linear0.5s; */
+        
+        /* Si queremos aplicar la transición a todas las propiedades pondemos el valor all */
+            transition: all 1s linear0.5s;
+        }
+
+        .elemento-transicion:hover {
+            background: #001380;
+        }
+    </style>
+</head>
+<body>
+    <div class="elemento1">
+
+    </div>
+
+    <div class="elemento-transicion">
+
+    </div>
+</body>
+</html>

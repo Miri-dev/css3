@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            display: inline-block;
+        }
+
+        /* Mover o trasladar */
+        #trasladar {
+            background: #ed561a;
+            transform: translateX(50px); /* se mueve en el eje X */
+            transform: translateY(50px); /* se mueve en el eje Y */
+            transform: translate(500px 200px); /* con este especificamos primero en el eje X y luego en el eje Y*/
+        }
+
+    
+        /* Girar o rotar elementos */
+        #rotar {
+            background: #1aef9d;
+            /* transform: rotate(150deg); Le ponemos cuántos grados(deg) queremos rotarlo */
+            transition: all 0.5s;
+        }
+
+        #rotar:hover {
+            transform: rotate(150deg); /* Le ponemos cuántos grados(deg) queremos rotarlo */
+        }
+
+        #deformar {
+            background: #8bd130;
+            transform: skew(50deg); /* El elemento se deforma según los grados(deg) que le pongamos*/
+        }
+
+        /* Aumentar tamaño */
+        #escalar {
+        background: #8c00dd;
+        /* transform: scale(1.5); Aumenta el tamaño en 1.5 Se puede aumentar o disminuir */
+        transition: all 0.5s;
+        }
+
+         /* Es útil y está relacionado con :hover y las transiciones */
+         #escalar:hover {
+            transform: scale(1.5); /* Aumenta el tamaño en 1.5 Se puede aumentar o disminuir*/
+        }
+       
+    
+    </style>
+</head>
+<body>
+    <div id="trasladar"></div>
+
+    <div id="escalar"></div>
+
+    <div id="rotar"></div>
+
+    <div id="deformar"></div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background: #111;
+        }
+
+        .container {
+            width: 95%; /* le ponemos 95% en vez de 100% para poder centrarlo un poco con los margin*/
+            margin: 50px auto;
+        }
+
+        .items {
+            float: left;
+            width: 30%; /* ponemos 30% porque queremos que en el 95% que hemos hemos y dividirlo entre 3 y el resto de espacio se queda en los márgenes. */
+            height: 300px;
+            margin: 20px;
+            border: 5px solid rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15 10px #000;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 4em;
+            text-align: center; 
+            font-weight: normal;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Galería de imágenes</h1>
+
+        <div class="items">
+            <img src="img/flores-primavera.jpeg" alt="">
+        </div>
+
+        <div class="items">
+            <img src="img/1354030.png" alt="">
+        </div>
+
+        <div class="items">
+            <img src="img/flores1.jpeg" alt="">
+        </div>
+
+ 
+        <div class="items">
+            <img src="img/prado.jpg" alt="">
+        </div>
+   
+        <div class="items">
+            <img src="img/personalado.jpeg" alt="">
+        </div>
+
+
+
+        <div class="items">
+            <img src="img/rostro.png" alt="">
+        </div>
+        
+    </div>
+
+</body>
+</html>

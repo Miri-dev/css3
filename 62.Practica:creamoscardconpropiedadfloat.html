@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background: url(img/personalado.jpeg) rgba(0, 136, 248, 0.9);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-blend-mode: multiply;
+        }
+
+        .container {
+            width: 650px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 100px auto /* cuando ponemos margin auto lo que hace con el contenedor es centrarlo de forma horizontal. Y los 100px nos lo coloca a esa altura a lo vertical. */;
+            box-shadow: 0 15px 50px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background: url(img/personalado.jpeg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%; /* con esto a una imagen cuadrada le damos un aspecto de redonda*/
+            float: left;
+            margin: 60px 30px 30px 0;
+            shape-outside: circle();
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-weight: normal;
+            font-size: 40px;
+        }
+
+        p {
+            line-height: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <h1>Lorem Ipsum dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat voluptatem illo facilis a debitis repellendus quasi! Architecto, maxime! Est doloribus unde sit quas consequatur atque quod labore deserunt ullam nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat voluptatem illo facilis a debitis repellendus quasi! Architecto, maxime! Est doloribus unde sit quas consequatur atque quod labore deserunt ullam nostrum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat voluptatem illo facilis a debitis repellendus quasi! Architecto, maxime! .</p>
+    </div>
+</body>
+</html>
