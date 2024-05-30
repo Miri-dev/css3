@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        body {
+            background: #03f46f;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Este position, top, left y transform se usaba antes para centras las cosasa en vez de flexbox */
+            width: 500px;
+            height: 400px;
+            transition: all 0.5s;
+            perspective: 2000px;
+
+        }
+
+        /* Para crear el marco blanco vamos a usar el pseudolemento ::before */
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border-top: 20px solid #fff;
+            border-left: 20px solid #fff;
+            box-sizing: border-box; /* Lo volvemos a poner porque el que ponemos con * no incluye a los pseudoelementos */
+        }
+
+
+        .box::after /* ponemos after para que se quede por detrás esta parte del borde */ {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border-bottom: 20px solid #fff;
+            border-right: 20px solid #fff;
+            box-sizing: border-box; /* Lo volvemos a poner porque el que ponemos con * no incluye a los pseudoelementos */
+        }
+
+        .box:hover {
+            transform: translate(-50%, -50%) rotateY(-30deg) skew(5deg); /*hay que volverle a colorar el traslate que le habíamos puesto antes para centrarlo porque si no lo sobreescribe y se mueve donde no queremos */
+        }
+
+        .text {
+            position: absolute;
+            top: 30px;
+            left: -30px;
+            background: #262626;
+            width: calc(100% + 60px);
+            height: calc(100% - 60px);
+            transition: all 0.5s;
+        }
+
+       .text:hover {
+            transform: rotateY(30deg) skew(-5deg); /*le damos la rotación inversa a la que tiene box:hover para que vaya hacia el otro lado */
+        }
+
+        .text div {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            transform: translateY(-50%);
+            padding: 40px 80px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .text div h1,
+        .text div p {
+            margin: 0 0 20px;
+            color: #fff;
+        }
+
+        .text div p {
+            font-size: 18px;
+        }
+
+        i {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            color: #262626;
+            text-align: center;
+            line-height: 80px !important; /* como es el mismo tamaño que width nos lo centra, es un truco y hay que poner !important para que lo tenga en cuenta */
+            font-size: 40px;
+        }
+
+        i.fa1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+
+        i.fa2 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <i class="fa1 fa-solid fa-quote-left"></i>  <!-- lo colocamos aquí porque está dentro del contenedor box --> 
+        
+        <div class="text">
+            <i class="fa2 fa-solid fa-quote-right"></i> <!-- lo colocamos aquí porque está dentro del contenedor text  --> 
+            <div>
+                <h1>Nota del día</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, a unde. Mollitia doloribus omnis ipsa odit. Vitae atque assumenda odio, corrupti repellendus ea omnis excepturi aut sit! Similique, quibusdam ipsam.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

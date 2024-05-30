@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       
+        div {
+            width: 200px;
+            height: 200px;
+            background: gray;
+            margin: 50px 0;
+
+            /* PROPIEDADES DE ANIMACIÓN */
+            /* animation-name: changeColor;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0.5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            animation-play-state: paused; */
+
+            /* ATAJO PARA LAS PROPIEDADES DE ANIMACIÓN */
+            animation: changeColor 5s linear 0.5s infinite alternate forwards paused;
+        }
+
+        div:hover {
+            animation-play-state: running;
+        }
+
+        /* PASO 2: CREAR LA ANIMACIÓN */
+        @keyframes changeColor {
+            0% {
+                transform: translate(0);
+                background: blue;
+            }
+
+            50% {
+                background: orange;
+            }
+
+            100% {
+                transform: translate(1000px);
+                background: #000;
+            }
+        }
+         /* PASO 1: PROPIEDADES DE ANIMACIÓN (se ponen en el elemento que vamos a animar) */
+         /* 
+            - animation-name: (nombre de animación. Propiedad obligatoria)
+            - animation-duration: (Duración.)
+            - animation-timing-function: (velocidad del movimiento)
+            - animation-delay: ( Retraso, lo que tarda en empezar la animación)
+            - animation-iteration-count: (Cantidad de veces que se repite la animación)
+            - animation-direction: (Dirección en la que va la animación)
+            - animation-fill-mode: (Mostrará qué va a pasar cuando termine)
+            - animation-play-state: (Estado en el que va a estar la animación, que puede ser corriendo o pausada )
+         */
+
+         /* PASO 2: CREAR LA ANIMACIÓN
+         Se hace usando @keyframes y el nombre de la animación en vez del identifier que aparece por defecto. Por eso es importante el nombre de la animación porque nos permite relacionarla con lo que quiero aplicar. Y detro de su {} le vamos añadiendo un porcentaje de lo que queremos que haga por ejemplo cuando esté al 0%, al 50% y al 100% */
+
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

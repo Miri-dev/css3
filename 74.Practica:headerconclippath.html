@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        body {
+            height: 150vh; /* Ponemos 150vh porque cuando ponemos más de 100 nos permite ya hacer scroll que es lo que queremos en este caso. */
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(img/flores-primavera.jpeg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            clip-path: circle(150vh at 50% -50vh); /* Le ponemos 150vh para que el círculo con la imagen ocupe lo mismo que el body que le hemos dado 150vh también, luego ponemos 50% para que esté centrado y le quitamos -50vh en la posicion Y para haga como ese mordisco */
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 5em;
+            font-weight: 600;
+            line-height: 2px;
+        }
+
+    </style>
+</head>
+<body>
+   <section>
+        <h1>Mi página web</h1>
+   </section>
+</body>
+</html>

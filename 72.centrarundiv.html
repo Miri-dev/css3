@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            position: relative;
+            background: crimson;
+            color: #fff;
+            width: 500px;
+            height: 500px;
+
+            /* TERCERA FORMA DE CENTRAR UN DIV */
+                margin: auto; /* Pero solo centra a los elementos que estan en línea o con un tamaño establecido */
+        }
+
+        h1 {
+            /* PRIMERA FORMA DE CENTRAR: TEXTO DE UNA SOLA LÍNEA */
+                /* text-align: center; Lo centra de forma horizontal */
+                /* line-height: 500px; Hay que darle la misma altura que tiene su contendor */
+            
+            /* SEGUNDA FORMA DE CENTRAR */
+                /* position: absolute; Para que funcione, el contenedor principal tiene que tener position: relative */
+                /* top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);  */
+        }   
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Hola mundo!</h1>
+    </div>
+</body>
+</html>

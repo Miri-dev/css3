@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #252839;
+        }
+
+        h2 {
+            position: relative;
+            margin: 100px;
+            font-size: 14vw;
+            color: #252839;
+            -webkit-text-stroke: 3px #383d52; /* Nos permite darle un borde al texto */
+            text-transform: uppercase;
+        }
+
+        h2::before {
+            content: attr(data-text); /* Lo que hace attr es coger un atributo y en este caso lo que queremos coger es el atributo data-text que le hemos colocado a la etiqueta h2. De esta manera estará cogiendo ese atributo que dice " Loading..." De esta manera lo hacemos dinámico en vez de escribir nosotros directamente el content */
+            position: absolute; /* Le ponemos position absolute con top y left = 0 para que se coloque esxactamente en el mismo sitio que el h2 con su posición relative. */
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            color: #327f9d;
+            -webkit-text-stroke: 0 #383d52; /* Con esto le estamos quitando los bordes */
+            border-right: 2px solid #327f9d;
+            overflow: hidden;
+            animation: animate 5s linear alternate infinite running;
+
+            /* Le ponemos un width de 0 para que el contenedor cuando vaya a empezar la animación no esté, es decir que la border right que le hemos puesto que será la barra que va a ir de un lado a otro rellenando la palabara Loading estará a la izquierda del todo porque el contenedor en ese momento tiene 0 pixeles de ancho. Y le ponemos la propiedad overflow: hidden para solo se superponga el h2::before a medida que el width del contenedor vaya creciendo. Es decir, que solo aparece en color #327f9d; lo que esté dentro del contenedor, que si es 0 de ancho no habrá nada, si tiene más pixeles de ancho se pondrá de ese color hasta donde lleguen esos pixeles. Overflow: hidden muestra solo lo que entra dentro del contenedor, lo que está fuera no lo muestra. Luego en la propiedad @keyframes juagremos con el porcentaje de piexeles que tendrá este contenedor */
+
+            /* A la animación le damos el valor de alternate para que cuando vaya de una esquina a otra, vuelva por el mismo camino, es decir vaya de derecha a izquierda y de izquierda a derecha. */ 
+        }
+
+        @keyframes animate {
+            0% {
+                width: 0;
+            }
+
+            70%, 100% {
+                /* Le ponemos 70% y 100% para que haga una pequeña pausa cuando el borde llega al final, porque cuando llega al 70% de la animación ya ha completado el 90% del contenedor, y espera quieto a que la animación llegue a 100 antes de retroceder. Si ponemos 60% irá más rápido, si vamos bajando el primer porcentaje va más rápido. Ese porcentaje es en función del tiempo que le hayamos puesto que dura la animacion, en nuestro caso en el 70% de los 5 segundos completa el 90% del ancho del contenedor y luego espera los segundos que quedan quieto hasta llegar al 100% de los segundos, es decir hasta llegar a los 5 segundos */
+                width: 90%;
+            }
+        }
+        
+    </style>
+
+
+</head>
+<body>
+    <h2 data-text="Loading...">Loading...</h2>
+    <!-- Al h2 le ponemos un atributo data-text que será la palabra Loading... para luego poderlo usar con el pseudoelemento ::before -->
+</body>
+</html>
