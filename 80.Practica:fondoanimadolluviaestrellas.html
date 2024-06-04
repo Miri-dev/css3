@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100%;
+        height: 100vh;
+        background: url(img/tierra.webp);
+        background-size: cover;
+        background-position: center center;
+        overflow: hidden; /* Lo ponemos hidden para que luego las estrellas estén por fuera del contenedor y hagan el efecto bonito */
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+                    0 0 0 5px rgba(255, 255, 255, 0.1); 
+        animation: animate 3s linear infinite;
+        /* Con esto estamos dándole el puntito que será la estrella */
+    }
+
+    span::before {
+        /* Con esto lo que hacemos es crear la colita de la estrella, la rayita que hace como si fuera la estela que hace la estrella */
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 1px;
+        background: linear-gradient(90deg, #fff, transparent) /* Esto hace que la línea vaya de blanco a transparente en dregradado*/
+    }
+
+    @keyframes animate {
+        0% {
+            transform: rotate(315deg) translateX(0);
+            opacity: 1;
+        }
+        70% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: rotate(315deg) translateX(-1000px);
+            opacity: 0;
+        }
+        /* Al poner tanto al 0% como al 100% un rotate de 315 grados, lo que hacemos es colocar la estrella en diagonal */ 
+    }
+
+    span:nth-child(1) {
+        top: 0;
+        right: 0;
+        left: initial; /* Con esto estamos reiniciando la posición en left, porque a span le pusimos que estuviera left al 50%, y con initial estamos reiniciando esta posición para el span child 1, y al ponerle right: 0, lo que hace es colocarse arriba a la derecha del todo  */
+        animation-delay: 0;
+        animation-duration: 1s;
+    }
+    /* A cada span le vamos a dar un aniamtion-delay y un animation-duration diferente para que empeicen en tiempos diferentes y duren diferente. También las vamos a posicionar en diferentes lugares gracias a los pixeles que pongamos en top y right */
+    span:nth-child(2) {
+        top: 0;
+        right: 80px;
+        left: initial; 
+        animation-delay: 0.2s;
+        animation-duration: 3s;
+    }
+
+    span:nth-child(3) {
+        top: 80px;
+        right: 0;
+        left: initial; 
+        animation-delay: 0.6s;
+        animation-duration: 1.5s;
+    }
+
+    span:nth-child(4) {
+        top: 0;
+        right: 180px;
+        left: initial; 
+        animation-delay: 0.6s;
+        animation-duration: 1.5s;
+    }
+
+    span:nth-child(5) {
+        top: 0;
+        right: 400px;
+        left: initial; 
+        animation-delay: 0.8s;
+        animation-duration: 2.5s;
+    }
+
+    span:nth-child(6) {
+        top: 0;
+        right: 600px;
+        left: initial; 
+        animation-delay: 1s;
+        animation-duration: 3s;
+    }
+
+    span:nth-child(7) {
+        top: 300px;
+        right: 0;
+        left: initial; 
+        animation-delay: 1.2s;
+        animation-duration: 1.75s;
+    }
+
+    span:nth-child(8) {
+        top: 0;
+        right: 700px;
+        left: initial; 
+        animation-delay: 1.4s;
+        animation-duration: 1.25s;
+    }
+
+    span:nth-child(9) {
+        top: 80px;
+        right: 1000px;
+        left: initial; 
+        animation-delay: 0.75s;
+        animation-duration: 2.25s;
+    }
+
+    span:nth-child(10) {
+        top: 200px;
+        right: 1500px;
+        left: initial; 
+        animation-delay: 2.75s;
+        animation-duration: 2.25s;
+    }
+    </style>
+</head>
+<body>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</body>
+</html>
