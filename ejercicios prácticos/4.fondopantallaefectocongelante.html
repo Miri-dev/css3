@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            background: url(img/montaña.jpeg) no-repeat center;
+            /* background-position: center; */
+            transition: all 1s;
+        }
+
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Con este position, top, left y transform estamos centrando el contenedor */
+            width: 600px;
+            height: 400px;
+            background: url(img/montaña.jpeg)no-repeat center; /* Lo que estamos haciendo es superponer de nuevo la imagen dentro del contenedor de 600px que estamos creando */
+            z-index: 1; /* Estamos trayendo este contedor hacia delante en el eje z, es decir la tenemos la primera y encima del contenedor bg */
+            transition: all 1s;
+        }
+
+        .box:hover {
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .box:hover ~.bg {
+            /* Al poner el ~.bg lo que le decimos es que cuando pase por encim el ratón sobre el contendor .box, acceda a su elemento hermano .bg y le añada el filtro blur que es el de difuminar el fondo */
+            filter: blur(10px);
+        }
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="box"></div>
+        <div class="bg"></div>
+    </section>
+</body>
+</html>

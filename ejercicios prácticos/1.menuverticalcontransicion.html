@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #222;
+        }
+
+        ul {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Con el position, top, left y transform lo que hacemos es centrar los elementos en el medio de la pantalla sin usar flex o grid */
+        }
+
+        ul li {
+            position: relative;
+            list-style: none; /* Con esto le quiramos el puntito a la lista */
+            margin: 5px;
+        }
+
+        ul li a {
+            position: relative;
+            height: 40px;
+            display: block; /* Para que coloque un elemento encima del otro respetando además el tamaño. Esto lo ponemos porque los enlaces por defecto tienen display inline y no respetan tamaños */
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 20px 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+            overflow: hidden; /* Esto lo hacemos para que cuando pasemos el ratón por encima uno de los span desaparezca */
+        }
+
+        ul li a::before {
+            /* Esto lo hacemos para añadirle el subrayado rojo */
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0; /* La position absolute nos posiciona dentro del contenedor a gracias a que tiene position: relative */
+            width: 100%; 
+            height: 100%; /* Con el width y height al 100% le estamos diciendo que se acople al tamaño de su contenedor padre que en este caso es el enlace a */
+            background: #ec333f;
+            transform: scaleX(0); /* De esta manera no se muestra, y cuando pasemos el ratón por encima pondremos que se muestre */
+            transition: transform 0.5s;
+        }
+
+        ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: left; /* Con esto le decimos que la transformación que queremos hacer viene de la izquierda y no desde el centro que es la predefinida */
+            transition-delay: 0.5s;
+        }
+
+        ul li a span {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Con el width y height al 100% le estamos diciendo que se acople al tamaño de su contenedor padre que en este caso es el enlace a */
+            display: block;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            /* Cuando ponemos estos estilos, ya no aparecen las dos etiquetas span en la pantalla, porque al haberle dado un tamaño de 40px al enlace y un overflow:hidden, el segundo span ya no entra en el contenedor y por tanto no aparece. Lo que hace hidden es que si no entra en el contenedor, no aparece */
+            transition: all 0.5s;
+        }
+
+        ul li a:hover span:nth-child(1) {
+            /* Con esto hacemos que el primer hijo suba hacia arriba y salga del contenedor */
+            transform: translateY(-100%);
+        }
+
+        ul li a:hover span:nth-child(2) {
+            /* Con esto hacemos que el segundo hijo suba hacia arriba y aparezca en el contenedor haciendo ese efecto de despalzamiento */
+            transform: translateY(-100%);
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">
+                <span>Inicio</span>
+                <span>Inicio</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>Nosotros</span>
+                <span>Nosotros</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>Productos</span>
+                <span>Productos</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>Servicios</span>
+                <span>Servicios</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span>Contacto</span>
+                <span>Contacto</span>
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

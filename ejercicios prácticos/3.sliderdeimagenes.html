@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #929292;
+        }
+
+        .container {
+            position: relative;
+            margin: 50px auto; /* Al poner margin 50px y luego auto lo que hacemos es centrarlo */
+            background: #fff;
+            width: 1000px;
+            height: 550px;
+            padding: 10px;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 90%;
+        }
+
+        .slider div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Con esto le estamos diciendo que ocupe el 100% del contenedor slider y por tanto la imagen que está en el div ocupará el espacio del contenedor slider */
+            opacity: 0; /* Le damos opacity de 0 para que no se vea la imagen y así cuando le demos a los números le pondremos la opacity a 1 para que se vea */
+        }
+        .slider div:nth-child(1) {
+            opacity: 1; /* Con esto le damos al primer hijo del conteedor slider que si que se vea, mientras que el resto permanecen con la opacity a 0 */
+        }
+
+        .slider div:target {
+            opacity: 1; /* :target aplica estilos a nuestro elemento objetivo, que en nuestro caso es cada vez que hacemos clic en uno de los enlaces que tenemos en menu */
+        }
+
+        .slider div img {
+            width: 100%;
+            height: 100%; /* Al poner el 100% en width y height lo que hacemos es que la iamgen se adapta al tamaño de su contedeor que es el div que tiene 200px */
+            object-fit: cover;
+        }
+
+        .menu {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .menu li {
+            display: inline-block;
+            text-align: center;
+        }
+
+        .menu li a{
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            text-decoration: none;
+            line-height: 40px;
+            background: #262626;
+            font-size: 20px;
+            border-radius: 50%;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="slider">
+            <div id="slide1">
+                <img src="img/r1.jpg" alt="">
+            </div>
+
+            <div id="slide2">
+                <img src="img/r2.jpeg" alt="">
+            </div>
+
+            <div id="slide3">
+                <img src="img/r3.jpeg" alt="">
+            </div>
+
+            <div id="slide4">
+                <img src="img/r4.jpeg" alt="">
+            </div>
+
+            <div id="slide5">
+                <img src="img/r5.jpeg" alt="">
+            </div>
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a href="#slide1">1</a>
+            </li>
+
+            <li>
+                <a href="#slide2">2</a>
+            </li>
+
+            <li>
+                <a href="#slide3">3</a>
+            </li>
+
+            <li>
+                <a href="#slide4">4</a>
+            </li>
+
+            <li>
+                <a href="#slide5">5</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
