@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CONTENEDOR SECTION */
+
+section {
+    height: calc(100vh - 50px); /* Así la imagen ocupa toda la pantalla menos 50px que van a ir siempre dedicados al menú de los colores */
+    background: url(wallpaper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* MENU DE COLORES */
+
+ul {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+}
+
+ul li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    list-style: none;
+    mix-blend-mode: hue; /* Esto es lo que hace que solo cambie el color del coche en vez de ponerse la pantalla entera de un color cuando se activa el hover */
+}
+
+/*?  COLORES DEL MENU (al pone el ? al lado del asterisco el comentario se pone en azul. Así indicamos que esto pertenece al apartado del Menu de colores pero es un subapartado dentro de ese)*/ 
+
+ul li:nth-child(1) {
+    background: #ff5500;
+}
+
+ul li:nth-child(2) {
+    background: #5500ff;
+}
+
+ul li:nth-child(3) {
+    background: #00b3b3;
+}
+
+ul li:nth-child(4) {
+    background: #44cc00;
+}
+
+ul li:nth-child(5) {
+    background: #e645a0;
+}
+
+ul:hover li{
+    opacity: 0; /* Esto junto con el siguiente lo que hace es que cuando hagamos hover en el contenedor ul, todos los li se vana  volver transparentes. Y con el siguiente estilo que hemos puesto cuando hagamos el hover por uno de los li, lo que hará es colocar esa opacity en 1 y por tanto toda la barra tendrá ese color */
+}
+
+ul li:hover {
+    opacity: 1;
+}
+
+
+/*? HOVER DEL MENU  */
+
+ul li:hover:nth-child(1) {
+    box-shadow: 0 0 0 1500px #ff5500; /* Con esto lo que hacemos es colcoar una sombra que no tiene ningún diminado y es enorme y por tanto lo que hace es porner un color sólido en toda la ventana */
+}
+
+ul li:hover:nth-child(2) {
+    box-shadow: 0 0 0 1500px #5500ff;
+}
+
+ul li:hover:nth-child(3) {
+    box-shadow: 0 0 0 1500px #00b3b3;
+}
+
+ul li:hover:nth-child(4) {
+    box-shadow: 0 0 0 1500px #44cc00;
+}
+
+ul li:hover:nth-child(5) {
+    box-shadow: 0 0 0 1500px #e645a0;
+}

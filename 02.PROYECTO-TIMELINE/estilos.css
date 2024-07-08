@@ -1,0 +1,125 @@
+/* ESTILOS GENERALES */
+
+/* Aplicamos un :root para poder aplicar variables como va a ser el color principal */
+:root {
+    --color-principal: #41eb41;
+    --color-sombra: rgba(65,235,65,0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    cursor: default;
+}
+
+
+/* Contendor de timeline */
+
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.timeline::before {
+    /* Para hacer la línea divisoria del timeline */
+    content: "";
+    position: absolute;
+    left: 50%; /* Esto coloca la línea a la mitad de la ventana del navegador*/
+    width: 2px;
+    height: 100%;
+    background: #c5c5c5;
+}
+
+/* Elementos de lista */
+
+.timeline ul li {
+    list-style: none;
+    position: relative;
+    width: 50%; /* Esto es lo que hace que se queden de la línea que es la mitad de la web a la izqueirda porque ocupan solo la mitad del espacio de la ventana */
+    padding: 20px 40px;
+}
+
+.timeline ul li:nth-child(odd) {
+    /* Cuando ponemos odd sigifica impares por lo que le decimos que coja los hijos de li que sean impares para colocarlos al lado izquierdo */
+    float: left; /* La propiedad float la usamos para colocar un elemento a la izquierda o a la derecha de su contenedor */
+    text-align: right;
+    clear: both;
+
+}
+
+.timeline ul li:nth-child(even) {
+    /* Cuando ponemos odd sigifica pares por lo que le decimos que coja los hijos de li que sean pares para colocarlos al lado derecho */
+    float: right; /* La propiedad float la usamos para colocar un elemento a la izquierda o a la derecha de su contenedor */
+    text-align: left;
+    clear: both; /* Al poner clear: both en ambos, como tienen la propiedad float lo que hace es dejar espacio al lado del elemento que lo lleva */
+}
+
+/* Círculo indicador */
+.timeline ul li::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    width: 10px;
+    height: 10px;
+    background: var(--color-principal);
+    border-radius: 50%;
+    box-shadow:  0 0 0 3px var(--color-sombra);
+    transition: all 0.5s;
+}
+
+.timeline ul li:nth-child(odd)::before {
+    right: -6px;
+}
+
+.timeline ul li:nth-child(even)::before {
+    left: -4px;
+}
+
+.timeline ul li:hover::before {
+    /* Cuando pasemos el ratón y hagamos hover por nuestra lista, accederá a ::before que es el punto que hemos creado,  y lo que hará es escalar a más grande el elemento ::before */
+    transform: scale(1.1);
+}
+
+/* Estilos a los contenidos */
+.content {
+    padding-bottom: 20px;
+}
+
+.timeline ul li h3 {
+    font-weight: 600;
+    color: var(--color-principal);
+}
+
+.timeline ul li p {
+    margin: 10px 0 0;
+}
+
+/* Estilos a la fecha */
+.time {
+    font-size: 14px;
+    position: absolute;
+    top: 20px;
+    padding: 8px 15px;
+    background: var(--color-principal);
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 0 3px var(--color-sombra);
+    transition: all 0.5s;
+}
+
+.timeline ul li:nth-child(odd) .time {
+    right: -145px;
+}
+
+.timeline ul li:nth-child(even) .time {
+    left: -145px;
+}
+
+.timeline ul li:hover .time {
+    /* Cuando pasemos el ratón y hagamos hover por nuestra lista, accederá a .time y lo que hará es escalar a más grande el elemento .time */
+    transform: scale(1.1);
+}
