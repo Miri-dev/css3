@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<link rel="stylesheet" href="estilosflexbox.css">
+
+<style>
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+
+        /* APLICAR DIRECCIÓN AL EJE PRINCIPAL Y EJE SECUNDARIO */
+
+        /* Aplicar al eje principal: propiedad justify-content */
+        justify-content: flex-start; /* Coloca los elementos a la izquierda (al comienzo del eje horizontal/vertical */
+        justify-content: flex-end; /* coloca los elementos al final del ejem horizontal, es decir que los coloca a la derecha o abajo si el eje es vertical.*/
+        justify-content: space-around; /* distribuye todos los elementos dejando espacio equitativo entre ellos. */
+        justify-content: space-between; /* junta el primero y el último más al borde mientras da espacio equitativo entre los demás  */
+        justify-content: center; /* junta y centra en el centro todos los elementos */
+
+        /* APLICAR AL EJE SECUNDARIO: se usa la propiedad align-items */
+        align-items: flex-start; /* Por defecto, coloca los elementos arriba del todo o a la izqueirda del todo, dependiendo del eje*/
+        align-items: flex-end;
+        align-items: stretch; /* Cuando no tenemos la propiedad justify-content, lo que hace es estirarse hasta llenar el contenedor */
+        align-items: center;
+
+    }
+</style>
+</head>
+<body>
+    <div class="flex-container flex-h">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,490 @@
+/* VARIABLES */
+:root {
+    --color-primario: #0d6efd;
+    --color-secundario: #085ed7;
+    --color-oscuro: #122936;
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.btn {
+    background: var(--color-primario);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: var(--color-secundario);
+}
+
+h1.title {
+    text-align: center;
+    font-weight: 100;
+    font-size: 55px;
+    letter-spacing: 2px;
+    margin: 30px 0;
+}
+
+/* MENU PRINCIPAL */
+.menu-principal {
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+
+.menu-principal div {
+    float: left;
+}
+
+.nav-imagen {
+    height: 100%;
+}
+.nav-imagen img {
+    width: 50%; /* Le estamos diciendo que tenga un ancho del 50% de su contnedor, porque si no se desborda y no entra */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.nav-enlaces a{
+    line-height: 50px; /* Le damos 50px porque  50px es el ancho que tiene su contenedor y de esta manera lo centramos */
+    margin: 0 20px;
+    color: #000;
+    padding: 4px 10px;
+    transition: all .5;
+    border: 2px solid transparent;
+}
+
+.nav-enlaces a.active {
+    /* Esto lo ponemos porque queremos que cuando un enlace esté activado tenga unos estilos concreto, y por esto le ponemos a a la clase .active. el elemento Inicio lo tiene por defecto, pero cuando hacemos click en cualquiera de los otros enlaces, automáticamente se les añade la clase .active */
+    color: var(--color-secundario);
+}
+
+.nav-enlaces a:hover {
+    border: 2px solid var(--color-primario);
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: calc(100vh - 50px); /* Le restamos al 100% los 50px que tiene de tamaño el menu principal */ 
+    position: relative;
+    background: url(img/wallpaper2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cn este width y heigh le estamos diciendo que el before abarque todo el esapcio del header */
+    background: rgba(0, 0, 0, 0.3); /* Crea una capa un poco oscura que oscurece la imagen para que el texto se resalte más */
+}
+
+header div {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin: 20px 0;
+    text-shadow: 4px 0 10px #000;
+}
+
+header .btn {
+    width: 180px;
+    height: 50px;
+}
+
+/* PRODCUTOS */
+.card {
+    position: relative;
+    width: 33%;
+    height: 420px;
+    background: var(--color-oscuro);
+    overflow: hidden;
+    float: left; /* Para que aparezcan uno al lado del otro */
+    border: none;
+    margin: 1px;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: var(--color-primario);
+    transform: skewY(345deg);
+    transition: all 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card::after {
+    content: "Technology";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: 600;
+    font-size: 4.5em;
+    color: rgb(0, 0, 0, 0.1);
+}
+.card .img-card {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Lo estamos centrando pero al ponerle un top de 35% lo que hacemos es centrarlo pero que se coloque un poco más arriba que si hubieramos puesto el 50% */
+    width: 100%;
+}
+
+.card .img-card img {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    max-width: 70%;
+    transition: all 0.5s;
+}
+
+.card:hover .img-card img {
+    max-width: 60%;
+}
+.content-card {
+    width: 100%;
+    position: absolute;
+    bottom: 12%;
+    text-align: center;
+    z-index: 1;
+}
+
+.content-card h3, .price{
+    font-size: 2vw;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content-card .price {
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.content-card .buy {
+    position: relative;
+    top: 200px; /* Al ponerle esto el botón se queda más abajo de su contenedor y como tiene además el overflow: hidden hace que no aparezca cuando está fuera del contenedor */
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+}
+
+.card:hover .content-card .buy {
+    top: 20px;
+    opacity: 1;
+}
+
+/* MENSAJE */
+.mensaje {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: url(img/section.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin-top: 50px;
+}
+
+.mensaje::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.mensaje p {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 65px;
+    font-weight: 100;
+    text-shadow: 5px 0 10px #000;
+}
+
+/* PRODUCTO FAVORITO */
+.favorito {
+    padding: 20px 150px;
+    height: 100vh;
+    position: relative;
+}
+
+.favorito::before {
+    content: "Technology";
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    font-weight: 600;
+    font-size: 10vw;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+.favorito::after {
+    content: "Best";
+    position: absolute;
+    top: 2%;
+    right: 0;
+    font-weight: 600;
+    font-size: 10vw;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+}
+
+.container-favorito > div /* ponemos > div porque lo que hace es coger a los hijos directos que sean div, no a todos los div que contiene este contenedor, si no solo a los div hijos directos, y no a los div hijos de estos divs (que son .imagen-fav y content-fav) */  {
+    float: left;
+    margin: 30px;
+}
+
+
+.imagen-fav {
+    width: 40%;
+    position: relative;
+}
+
+.imagen-fav::before {
+    content: "Best choice";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--color-secundario);
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    transform: rotate(-10deg);
+    box-shadow: 0 0 10px 5px var(--color-secundario);
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.imagen-fav:hover::before {
+    transform: rotate(-10deg) rotate(-10deg);
+
+}
+.container-favorito:hover .imagen-fav img {
+    transform: scale(1.1);
+}
+
+.imagen-fav img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+.content-fav {
+    width: 40%; /* Le tenemos que poner un ancho del 40% para que se coloque a la derecha de la imagen de la playstation que tiene un float:left y el contenedor de la imagen tiene un width: 40%, porrque si tiene un tamaño del 100% no entra y por tanto se coloca abajo y no hace caso del left */
+    height: 100%;
+}
+
+.content-fav h1 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.content-fav h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--color-secundario);
+}
+
+.content-fav .text p {
+    text-align: justify;
+    margin: 20px 0;
+
+}
+
+.content-inferior {
+    width: 100%;
+    height: 50px;
+}
+
+.content-inferior .price {
+    float: left;
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 600;
+    color: var(--color-oscuro);
+}
+
+.content-inferior .buy {
+    float: right;
+    width: 159px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/** SUSCRIVETE */
+
+.suscribe {
+    width: 100%;
+    height: 300px;
+    background: var(--color-oscuro);
+    margin-top: 30px;
+    position: relative;
+}
+
+.suscribe::before {
+    content: "Suscríbete";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15vw;
+    color: rgba(0, 0, 0, 0.08);
+}
+
+.search {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #e5e5e5;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    padding: 10px;
+    transition: all 0.5s;
+}
+
+.search:hover {
+    width: 300px;
+}
+
+.search:hover .search-text {
+    width: 90%; /* Esto lo ponemos porque si miramos en el contenedor .search-text le hemso puesto que tenga un width: 0, y cuando hacemos hover se le pone un width de 90%*/
+}
+
+.search:hover .search-icon {
+    background: var(--color-primario);
+    color: #fff;
+
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0 10px;
+    width: 0; /* Le ponemos un ancho de 0px porque de esta manera conseguimos que no se vea hasta que no le pasemos el ratón por encima que con :hover adquiere un width de 90% */
+    height: 100%;
+    color: #000;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+
+.search-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--color-primario);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px !important;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.search-icon:hover {
+    transform: scale(1.2);
+}
+
+
+/* FOOTER REDES SOCIALES */
+
+footer {
+    width: 100%;
+    height: 100px;
+    background: #0f212c;
+}
+
+footer div {
+    float: left;
+    width: 25%; /* Con esto estamos divieindo el conedor entre los 4 elementos al darle a cada div el 25% del espacio y como son cuatro div pues se reparten equitativamente a lo ancho de la pantalla */
+    height: 100%;
+    line-height: 100px; /* Al darle un height de 100px que es el mismo tamaño que tiene su contendor lo que hacemos es centrarlo a lo alto en medio de la pantalla*/
+    transition: all 0.5s;
+}
+
+footer div:hover {
+    background-color: #0d1c25;
+}
+
+footer div:hover a {
+    font-size: 35px;
+}
+
+footer div a {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    color: #ccc;
+    transition: all 0.5s;
+}

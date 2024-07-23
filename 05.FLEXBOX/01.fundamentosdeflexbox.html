@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="estilosflexbox.css">
+
+    <style>
+    .flex-container {
+        display: inline-flex; /* Los elementos hijos se adaptan al tamañado del contenedor padre, aunque lo modifiquemos o añadamos más elementos */
+        /* display: inline-flex --> mantiene los elementos hijos en su tamaño original aunque hagamos la ventana más pequeña y lo que hace es apare una barra de scroll para poder verlos todos */
+
+     /* DIRECCIONES */
+        flex-direction: row;
+        /* flex-direction: row-reverse;
+        flex-direction: column;
+        flex-direction: column-reverse; */
+
+    /* DESBORDE: para evitar que los elementos estén muy apretados y se hagan muy pequeños , hace un salto de línea y los mantiene en su tamaño original */
+        flex-wrap: nowrap; /* pord efecto, no hace ninfun tipo de desborde */
+        flex-wrap: wrap; /* Hace saltos de línea para que los elementos tengan más espacio y se mantengan con su tamaño original  */
+        flex-wrap: wrap-reverse; /* Hace el salto de línea pero coloca los elementos de forma invertida */
+
+    /* FLEX-FLOW: es un atajo para colocar el direction y el wrap pero en una sola línea */
+        flex-flow: row column;
+    }
+    
+</style>
+
+</head>
+<body>
+    <div class="flex-container">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+        <div class="items">7</div>
+        <div class="items">8</div>
+        <div class="items">9</div>
+        <div class="items">10</div>
+        <div class="items">11</div>
+        <div class="items">12</div>
+
+    </div>
+</body>
+</html>

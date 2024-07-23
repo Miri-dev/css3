@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background: crimson;
+            margin: 50px auto;
+            display: flex;
+
+            /* METODO 1 PARA CENTRAR */
+            justify-content: center;
+            align-items: center;
+
+            /* MÉTODO 2 PARA CENTRAR (SE USA MÁS EN GRID QUE EN FLEXBOX) */
+            /* place-items: center;
+            place-content: center; */
+        }
+
+        .container div {
+            width: 100px;
+            height: 100px;
+            background: #222;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div></div>
+    </div>
+</body>
+</html>
