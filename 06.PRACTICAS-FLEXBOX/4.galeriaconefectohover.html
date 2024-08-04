@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería cards</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .card {
+            position: relative;
+            width: 320px;
+            height: 280px;
+            margin: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .img, .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transform: scaleX(0); /* Al ponerle scaleX en cero, el pseudoelemento blanco que hemos creado con ::before no se ve, es como si no estuviera,  y luego cuando le hagamos hover lo pondremos en 1 para que se vea*/
+            transition: transform 0.5s;
+            transform-origin: right; /* Al ponerle esto cuando quitamos el cursos del hover lo que hace la pantalla blanca del ::before es desplazarse hacia la derecha */
+            transition-delay: 0.3s;
+        }
+
+        .card:hover .content::before {
+            transform: scaleX(1);
+            transform-origin: left; /* Al pasar el cursor el desplazamineto de la pantalla blanca del ::before viene de la derecha */
+        }
+
+        .text {
+            z-index: 1; /* Esto lo ponemos para que aparezca por encima del pseudoelemento y se vea el texto sobre blanco */
+            padding: 30px;
+            transform: translateX(-300px); /* Con esto desplazamos el texto hacia la izquierda de nuestro contenedor y como tiene hidden no se va a ver, así cuando hagamos hover lo desplazaremos de nuesvo al centro del contenedor y se verá con un efecto de desplazarse */
+            transition: all 0.5s;
+        }
+         .card:hover .text {
+            transform: translateX(0);
+            transition-delay: 0.5s;
+        }
+
+        .text h3 {
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image4.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image5.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image6.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image7.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image8.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img">
+                <img src="img/image9.jpg" alt="">
+            </div>
+
+            <div class="content">
+                <div class="text">
+                    <h3>Título del post</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus deserunt aliquam perspiciatis! Autem doloribus quam quisquam?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

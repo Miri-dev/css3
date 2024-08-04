@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #112d42;
+        }
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: #03a9f4;
+        } 
+        .container {
+            position: relative;
+            width: 1100px;
+            height: 550px;
+            z-index: 1;
+            display: flex;
+        } 
+
+       .info h2 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* INFO */
+        .info {
+            position: absolute;
+            top: 40px;
+            width: 350px;
+            height: calc(100% - 80px);
+            background: #0f3959;
+            z-index: 1;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            box-shadow: 10px 5px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-text {
+            margin: 20px 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .item {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .item span {
+            color: rgba(255, 255, 255, 0.5); /* De esta manera se queda de un tono gris, y al pasarle luego el hover le hemos puesto 1 y se vuelve blanco */
+        }
+
+        .item:hover span {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .item span:nth-child(1) {
+            /* Con esto estamos dando el tamaño a los iconos, porque el primer hijo de .item es el primer span que es el icono */
+            width: 25px;
+            font-size: 30px;
+            margin-right: 30px;
+        }
+        
+        .social {
+            width: 80%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social a {
+            text-decoration: none;
+            font-size: 25px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .social a:hover {
+            color: rgba(255, 255, 255, 1)
+        }
+
+        /* FORM */
+        .form {
+            position: absolute;
+            width: calc(100% - 200px);
+            height: 100%;
+            background: #fff;
+            margin-left: 150px;
+            padding: 60px 50px 70px 250px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .form h2 {
+            color: #0f3959;
+        }
+
+        .form-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding-top: 30px;
+        }
+
+        .input-box {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        
+        .input-box.w50 {
+            width: 48%;
+        }
+
+        .input-box.w100 {
+            width: 100%;
+        }
+
+        .input-box input,
+        .input-box textarea {
+            width: 100%; /* Tenemos que ponerle esto para que el width del 48% y del 100% puesta en las clases .w50 y .w100 sean efetivas, si no aunque le pongamos el porcenaje de tamaño si no le decimos luego que el input tiene que ocupar el 100% de ese 48%% no hará caso */
+            padding: 5px 0;
+            font-size: 18px;
+            color: #333;
+            border: none;
+            border-bottom: 1px solid #777;
+            outline: none; /* AL hacer click en el input no aparece el recuadro por defecto*/
+            resize: none;
+        }
+
+        .input-box textarea {
+            min-height: 120px;
+        }
+
+        .input-box span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            color: #888;
+            letter-spacing: 1px;
+            pointer-events: none; /* Al poner esto lo que hacemos es que no nos dejará seleccionar el span y por tanto si hacemos clic encima de él se activará el input, si no se lo ponemos, si hacemos clic donde el span lo que sucede es que lo seleccionamos */
+            transition: all 0.3s;
+        }
+
+        .input-box input:focus ~ span,
+        .input-box input:valid ~ span,
+        .input-box textarea:focus ~ span,
+        .input-box textarea:valid ~ span
+         {
+            /* Ponemos focus cuando hacemos click en el input para escrbir. Y ponemos valid para que cuando haya algo escrito en el input también se mantenga con estos estilos. */
+
+            /* Y ponemos ~porque queremos que cuando se haga focus en el input coja al hermanos adyacente span y le ponga estos estilos */
+            transform: translateY(-20px);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #03a9f4;
+        }
+
+        .input-box.btn {
+            display: flex;
+            justify-content: flex-end;
+
+        }
+
+        .input-box input[type="submit"] {
+            /* Ponemos entre [ ] cuando queremos seleccionar un input de un tipo concreto, en este caso tipo submit */
+            cursor: pointer;
+            background: #0f3959;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+            border: none;
+            width: 30%;
+            padding: 12px;
+            transition: all 0.3s;
+        }
+
+        .input-box input[type="submit"]:hover {
+            background: #03a9f4;
+        }
+       
+
+
+        
+
+    </style>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <!-- Info -->
+            <div class="info">
+                <div class="content">
+                    <h2>Información de contacto</h2>
+
+                    <div class="info-text">
+                        <div class="item">
+                            <span class="fa-solid fa-location-dot"></span>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laborum autem necessitatibus nobis iusto eum optio quis. </span>
+                        </div>
+
+                        <div class="item">
+                            <span class="fa-regular fa-envelope"></span>
+                            <span>lorenimpsun@gmail.com</span>
+                        </div>
+
+                        <div class="item">
+                            <span class="fa-solid fa-phone"></span>
+                            <span>999 999 999</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="social">
+                    <a href=""><span class="fa-brands fa-facebook"></span></a>
+                    <a href=""><span class="fa-brands fa-x-twitter"></span></a> 
+                    <a href=""><span class="fa-brands fa-instagram"></span></a>  
+                    <a href=""><span class="fa-brands fa-youtube"></span></a> 
+                    <a href=""><span class="fa-brands fa-google"></span></a> 
+                </div>
+            </div>
+
+            <!-- Form -->
+
+            <div class="form">
+                <h2>Comunícate con nosotros</h2>
+
+                <div class="form-box">
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Nombre</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Apellido</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Email</span>
+                    </div>
+
+                    <div class="input-box w50">
+                        <input type="text" required>
+                        <span>Teléfono</span>
+                    </div>
+
+                    <div class="input-box w100">
+                        <textarea required></textarea>
+                        <span>Escribe tu mensaje</span>
+                    </div>
+
+                    <div class="input-box w100 btn">
+                        <input type="submit" value="Enviar">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 350px;
+        }
+
+        h2 {
+            background: #03a9f4;
+            color: #fff;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 20px;
+        }
+
+        /* Estilo a la lista */
+
+        .list {
+            height: 500px;
+            overflow-y: auto; /* El auto lo ponemos porque cuando los elementos ya no entren en el contenedor automáticamente nos aparece un scroll para ir bajando y viendo el resto de elementos */
+        }
+
+        .list::-webkit-scrollbar {
+            /* Con esto le damos tamaño al scrollbar de la derecha */
+            width: 5px;
+        }
+
+        .list::-webkit-scrollbar-thumb {
+            /* Con esto le damos color al scrollbar de la derecha */
+            background: #03a9f4;
+            border-radius: 40px;
+        }
+
+            /* Estilo a los Items */
+        .item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.5s;
+        }
+
+        .item:last-child {
+            /* Con esto le decimos que el último elemento de la lista no tenga un borde abajo */
+            border-bottom: none;
+        }
+
+        .item:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+       .item label {
+        display: flex;
+        justify-content: space-between;
+        align-items: item;
+        cursor: pointer;
+        }
+
+        .item p {
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .item span {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #8b8b8b;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item span::before {
+            /* Con esto estamos haciendo el tick de dentro del circulo de la etiqueta spam, con los bordes se crea un borde izquierdo junto con uno abajo que al girarlo con transform es como el tick. Y está centrado dentro del círculo porque su contenedor padre que es span lleva display flex. */
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 5px;
+            border-left: 2px solid #8b8b8b;
+            border-bottom: 2px solid #8b8b8b;
+            transform: rotate(-40deg);
+        }
+
+        .item input {
+            display: none; /* De esta manera ocultamos el input de checkbox pero tampoco respeta su espacio por lo que desaparece */
+        }
+
+        /* APLICAR ESTILOS CUANDO EL ESTADO ESTÁ MARCADO (CHECKED) */
+        .item input:checked ~p {
+            /* Con esto lo que hacemos es que cuando el input que es un checkbox está marcado es cuando se aplciaránestos estilos. Al poner ~p lo que le decimos es que cuando el input esté marcado, le aplique los estilos a su elemento hermano que es el párrafo */
+            text-decoration: line-through; /* Coloca una línea sobre el texto, tachándolo */
+            color: #ccc;
+            font-weight: 600;
+        }
+
+        .item input:checked ~span {
+            background: #03a9f4;
+            border: 1px solid #03a9f4;
+        }
+
+        .item input:checked ~span:before {
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>To Do List</h2>
+        <div class="list">
+            <div class="item">
+                <label>
+                    <!-- La etiqueta label está para que cuando hagamos click en la cualquier parte de la etiqueta label, active y marque el checkbox. Es decir que con la etiqueta label no hace falta clicar solo en el checkbox para amrcarlo si no que si clicamos en cualquier parte del contenedor label también lo marcará -->
+                    <input type="checkbox" name="" id="">
+                    <p>Comer</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Programar</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Estudiar</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Conquistar el mundo</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Jugar</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Estar con mi gato</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Ir a la playa</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Hacer ejercicio</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Cocinar</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Cenar</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Leer</p>
+                    <span></span>
+                </label>
+            </div>
+
+            <div class="item">
+                <label>
+                    <input type="checkbox" name="" id="">
+                    <p>Preparar comida</p>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

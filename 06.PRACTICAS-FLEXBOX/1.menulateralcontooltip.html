@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip</title>
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ffd107;;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            width: 60px;
+            background: #fff;
+            height: 300px;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        nav a {
+            position: relative;
+            width: 100%;
+            height: 15%;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #0077ff;
+            transition: all 0.5s;
+        }
+
+        nav a:hover {
+            background: #0077ff;
+            color: #fff;
+        }
+
+        .title {
+            position: absolute;
+            left: 45px;
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #0077ff;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        nav a:hover .title {
+            opacity: 1;
+            left: 65px; /* Como en .title le hemos puesto un left de 45px, al ponerle aquí 65px cuando le hagamos hover, nos crea un efecto que parece que va suavemente de izquierda a derecha al aparecer */
+        }
+
+        .title::before {
+            /* Esto nos sirve para hacer el piquito que tiene el recuadro blanco que contienen los títulos */
+            content: "";
+            position: absolute;
+            top: 35%;
+            left: -5px;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            transform: rotate(45deg); /* Con esto le damos la vuelta al cruadradito de 12px por 12 px y se queda ladeado y al ponerlo en blanco se funde con el recuadro blanco y parece que le sale solo la pestañita */
+        }
+    </style>
+
+
+</head>
+<body>
+    <nav>
+        <a href="">
+            <span class="icon fa-solid fa-house"></span>
+            <span class="title">Inicio</span>
+        </a>
+
+        <a href="">
+            <span class="icon fa-solid fa-user"></span>
+            <span class="title">Usuario</span>
+        </a>
+
+        <a href="">
+            <span class="icon fa-solid fa-comment"></span>
+            <span class="title">Mensajes</span>
+        </a>
+
+        <a href="">
+            <span class="icon fa-solid fa-circle-question"></span>
+            <span class="title">Ayuda</span>
+        </a>
+
+        <a href="">
+            <span class="icon fa-solid fa-gear"></span>
+            <span class="title">Configuración</span>
+        </a>
+        
+    </nav>
+</body>
+</html>

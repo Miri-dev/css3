@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú panel</title>
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* MENU LATERAL */
+
+        nav {
+            position: fixed; /* Para que siempre esté ubicado en el mismo sitio aunque hagamos scroll en la página */
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 100vh;
+            background: #111;
+        }
+
+        .contenedor-imagen {
+            width: 100%;
+            height: 50px;
+            display: flex; /* Con esto centramos el contenedor de la imagen en el centro y luego al darle a la imagen un width de 100% la adecuamos al tamaño */
+            justify-content: center;
+            align-items: center; 
+            margin-bottom: 20px;
+        }
+
+        .contenedor-imagen .logo {
+            width: 100%;
+        }
+
+        .enlaces {
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.4);
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Le damos el ancho y el alto al contenedor del enlace porque dentro de a esta el icono, y por tanto para centrar correctamente el icono, le damos a su contenedor que es a un ancho y alto y después le damos display flex y justify-content y align-items center para que se quede muy bien centrado dentro */
+            transition: all 0.5;
+        }
+
+        a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #0d6efd;
+        }
+
+        .btn-inferior {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .btn-inferior:hover {
+            background: #dc3545;
+            color: #fff;
+        }
+    
+        /* MENU SUPERIOR */
+        header {
+            width: 100%;
+            height: 50px;
+            padding: 0 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+
+        header .info-user {
+            display: flex;
+            align-items: center;
+        }
+
+        header .info-user i {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+            font-size: 1.2em;
+            color: #4b4b4b;
+            cursor: pointer;
+        }
+
+        header .info-user i::after {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            width: 7px;
+            height: 7px;
+            background: #dc3545;
+            border-radius: 50%;
+        }
+
+       header .info-user .container-image {
+            position: relative;
+            cursor: pointer;
+        }
+
+       header .info-user .container-image img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+       header .info-user .container-image::after {
+        content: "";
+            position: absolute;
+            bottom: 3px;
+            right: 0;
+            width: 12px;
+            height: 12px;
+            background: #37e920;
+            border-radius: 50%;
+        }
+
+       /* REDES SOCIALES */
+
+       .sociales {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+        }
+
+        .sociales .icon {
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }   
+
+        .sociales .icon i {
+            width: 50px;
+            height: 50px;
+            background: #ccc;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;/* Esta es la forma de centrar sin usar flexbox */
+            font-size: 20px;
+        }
+
+        .sociales .icon .tooltip {
+            position: absolute;
+            top: 0;
+            background: #ccc;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+        .sociales .icon:hover .tooltip {
+            opacity: 1;
+            top: -60px;
+            pointer-events: none;
+        }
+
+        .sociales .icon .tooltip::before {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: #ccc;
+            transform: translate(-50%) rotate(45deg); /* Con esto hacemos la flechita que señala hacia abajo*/
+            transition: all 0.5;
+        }
+
+        .sociales .facebook:hover i,
+        .sociales .facebook:hover .tooltip,
+        .sociales .facebook:hover .tooltip::before {
+            background: #3b5999;
+            color: #fff;
+        }
+
+        .sociales .twitter:hover i,
+        .sociales .twitter:hover .tooltip,
+        .sociales .twitter:hover .tooltip::before {
+            background: #46c1f6;
+            color: #fff;
+        }
+
+        .sociales .instagram:hover i,
+        .sociales .instagram:hover .tooltip,
+        .sociales .instagram:hover .tooltip::before {
+            background: #e1306c;
+            color: #fff;
+        }
+
+        .sociales .youtube:hover i,
+        .sociales .youtube:hover .tooltip,
+        .sociales .youtube:hover .tooltip::before {
+            background: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <nav>
+        <div class="contenedor-imagen">
+            <img src="img/logo3.png" alt="" class="logo">
+        </div>
+
+        <div class="enlaces">
+            <a href=""><i class="fa-solid fa-users"></i></a>
+            <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+            <a href=""><i class="fa-solid fa-file-invoice-dollar"></i></a>
+            <a href=""><i class="fa-solid fa-comments"></i></a>
+            <a href=""><i class="fa-solid fa-file-lines"></i></a>
+            <a href=""><i class="fa-solid fa-gear"></i></a>
+        </div>
+
+        <a href="" class="btn-inferior"><i class="fa-solid fa-power-off"></i></a>
+    </nav>
+
+    <!-- MENU SUPERIOR -->
+    <header>
+        <p>Bienvenido</p>
+
+        <div class="info-user">
+            <i class="fa-solid fa-bell"></i>
+            <div class="container-image">
+                <img src="img/perfil.jpg" alt="">
+            </div>
+        </div>
+    </header>
+
+    <!-- REDES SOCIALES-->
+     <div class="sociales">
+        <div class="icon facebook">
+            <div class="tooltip">Facebook</div>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+
+        <div class="icon twitter">
+            <div class="tooltip">Twitter</div>
+            <i class="fa-brands fa-x-twitter"></i>
+        </div>
+
+        <div class="icon instagram">
+            <div class="tooltip">Instagram</div>
+            <i class="fa-brands fa-instagram"></i>
+        </div>
+
+        <div class="icon youtube">
+            <div class="tooltip">Youtube</div>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+     </div>
+    
+</body>
+</html>
