@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* En vez de hacer esto podemos usar la función repeat() */
+            grid-template-rows: 200px 200px 200px 200px;
+            gap: 20px;
+
+            /* FUNCION REPEAT(): PERMITE REPETIR UN VALOR. El primer valor es el número de elementos que queremos tener y el segundo elemento la fracción que queremos que ocupe cada una o el tamaño en pixeles. Si queremos que la utlima columna tenga otro tamaño podemos colocarlo fuera del paréntesis */
+            grid-template-columns: repeat(2, 1fr) 2fr repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+
+            /* FUNCION MINMAX(): Con esto establecemos un tamaño mínimo y máximos a las columnas */
+            grid-template-columns: minmax(150px, 800px);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>

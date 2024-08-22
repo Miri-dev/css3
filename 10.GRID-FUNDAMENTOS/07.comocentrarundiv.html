@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background: crimson;
+            margin: 50px auto;
+
+            /* MÉTODO 1 PARA CENTRAR UN DIV: CON FLEXBOX (la manera más popular y el mejor para centrar un div) */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+
+            /* MÉTODO 2 PARA CENTRAR UN DIV: CON GRID */
+            display: grid;
+            justify-content: center;
+            align-content: center;
+
+            /* MÉTODO 3 PARA CENTRAR UN DIV: CON GRID (es nuevo y permite centrarlo con una única línea con la propiedad place-items) */
+            display: grid;
+            place-items: center;
+        }
+
+        .container div {
+            width: 100px;
+            height: 100px;
+            background: #222;
+        }
+
+
+    </style>
+    <div class="container">
+        <div></div>
+    </div>
+</body>
+</html>

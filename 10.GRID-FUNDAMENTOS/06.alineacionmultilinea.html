@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .grid {
+            display: grid;
+            gap: 20px;
+            height: 1000px;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(3, 200px);
+
+            /* ALINEAR DE FORMA HORIZONTAL UN GRUPO DE ELEMENTOS */
+            justify-content: center;
+            justify-content: start;
+            justify-content: end;
+            justify-content: space-around;
+            justify-content: space-between;
+            justify-content: space-evenly; /* exclusivo de grid, deja el mismo tamaño de huecos entre todos los elementos */
+
+            /* ALINEAR DE FORMA VERTICAL UN GRUPO DE ELEMENTOS. (para que funcione necesitamos que el contenedor principal tenga una altura definida, en este caso con heigh: 100px; */
+            align-content: center;
+            align-content: end;
+            align-content: start;
+            align-content: space-around;
+            align-content: space-between;
+            align-content: space-evenly; /* exclusivo de grid, deja el mismo tamaño de huecos entre todos los elementos */
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="item">6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      
+    </div>
+</body>
+</html>

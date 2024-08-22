@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .grid {
+         display: grid;
+         gap: 20px;
+         grid-template-columns: repeat(3, 1fr);
+         grid-template-rows: repeat(3, 200px);
+
+         /* ALINEAR ELEMENTOS HORIZONTALMENTE */
+         justify-items: start; /* Se coloca a la izqueirda del elemento*/
+         justify-items: end; /*Se coloca a la derecha del elemento */
+         justify-items: center;
+         justify-items: auto;
+         justify-items: stretch; /* se amplia a todo el contenido del elemento */
+
+         /* ALINEAR ELEMENTO DE FORMA VERTICAL */
+         align-items: start; /* Se coloca arriba del elemento*/
+         align-items: end; /*Se coloca abajo del elemento */
+         align-items: center;
+         align-items: stretch; /* se amplia a todo el contenido del elemento */
+        }
+
+        /* CUANDO QUEREMOS ALINEAR SOLO UNO DE LOS ELEMENTOS QUE FORMAN EL GRID, USAREMOS JUSTIFY-SELF O ALIGN-SELF */
+        .grid .item {
+            background: violet;
+            justify-self: center;
+            align-self: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div class="item">6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+</body>
+</html>
