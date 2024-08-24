@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/0b33b1ff1c.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #fff;
+        }
+
+        body {
+            display: grid;
+            /* justify-content: end; */
+            align-content: end;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            display: inline-block; /* Los enlaces tienen por defecto inline y por eso no respetan tamaños, por eso le ponemos inline-block y así lo spodemos manipular */
+        }
+
+        a:hover {
+            color: #4da1fa;
+        }
+
+        footer {
+            background: #222;
+            padding: 50px 100px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 20px;  
+        }
+
+        footer h2 {
+            color: #ccc;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin: 15px 0;
+        }
+
+        /* NOSOTROS */
+        .sociales {
+            margin: 10px 0;
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            gap: 10px;
+        }
+
+        .sociales a {
+            width: 50px;
+            height: 50px;
+            background: #555;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .sociales a:hover {
+            background: #333;
+        }
+
+        /*  ENLACES */
+      
+        li {
+            list-style: none;
+            margin: 10px 0;
+
+        }
+
+        /*  CONTACTO */
+        .contacto div {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            margin: 15px 0;
+        }
+
+        /* COPYRIGHT */
+        .copy {
+            background: #111;
+            height: 50px;
+            display: grid;
+            place-items: center; /* Podemos centrar los elementos tanto con grid (aquí) como con flex (lo hemos hecho en .sociales) pero en grid tiene una línea menos */
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="nosotros">
+            <h2>Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorum odit numquam deleniti harum laboriosam vel excepturi iste beatae perspiciatis ducimus, maxime aperiam quod placeat corrupti assumenda dolor labore quae!</p>
+
+            <div class="sociales">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="enlaces">
+            <h2>Enlaces sugeridos</h2>
+            <ul>
+                <li><a href="">Nosotros</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Politicas</a></li>
+                <li><a href="">Ayuda</a></li>
+                <li><a href="">Términos & Condiciones</a></li>
+                <li><a href="">Contacto</a></li>
+
+            </ul>
+        </div>
+
+        <div class="enlaces">
+            <h2>Tienda</h2>
+            <ul>
+                <li><a href="">Telefonía</a></li>
+                <li><a href="">Videoconsolas</a></li>
+                <li><a href="">Computadores</a></li>
+                <li><a href="">Audífonos</a></li>
+                <li><a href="">Periféricos</a></li>
+                <li><a href=""></a>Televisores</li>
+
+            </ul>
+        </div>
+
+        <div class="contacto">
+            <h2>Contáctanos</h2>
+
+            <div>
+                <i class="fa-solid fa-map-pin"></i>
+                <span>Lorem Impsun consecutur. USA</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <p>
+                    <a href="">000 000 000</a> <br>
+                    <a href="">000 000 000 </a>
+                </p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <a href="">aaa@aaa.com</a>
+            </div>
+        </div>
+
+       
+    </footer>
+    <div class="copy">
+        <p>Copyright @ 2024. Todos los derechos reservados</p>
+    </div>
+</body>
+</html>
